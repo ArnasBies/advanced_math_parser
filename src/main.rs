@@ -3,6 +3,7 @@ mod query;
 
 fn main(){
     let mut expression: String = String::new();
+    parser::Operations::tokenize("-cos(35) * arccos(234234) + log(23)".to_string());
 
     loop{
 
