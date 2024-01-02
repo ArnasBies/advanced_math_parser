@@ -1,0 +1,35 @@
+#![allow(dead_code)]
+use crate::parser::Operations;
+
+struct Query{
+    expression: Vec<Operations>,    
+}
+
+impl Query{
+    pub fn new(expression: String) -> Option<Query>{
+        match Operations::tokenize(expression){
+            Some(x) => {
+                return Some(Query{
+                    expression: x
+                })
+            },
+            None => return None,
+        }
+    }
+
+    pub fn evaluate(&self) -> Option<f64>{
+        //if only -() is left handle that case
+        
+        todo!()
+    }
+
+    fn collapse(l_digit: Operations, operation: Operations, r_digit: Operations) -> Option<f64>{
+        match (l_digit, r_digit){
+            (Digit(l), Digit(r)) => {
+                
+                Some(2)
+            },
+            _=> None
+        }
+    }
+}
